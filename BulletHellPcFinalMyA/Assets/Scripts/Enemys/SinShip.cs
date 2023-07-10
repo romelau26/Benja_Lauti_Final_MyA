@@ -8,14 +8,20 @@ public class SinShip : BasicStats
     IAdvance _sinAdvance;
     IAdvance _currentAdvance;
     [SerializeField]float curveMove;
+    [SerializeField] GameObject ExplotionCam;
     private void Awake()
     {
-        _sinAdvance = new MovementSin(transform,_movementSpeed,curveMove);
+        _sinAdvance = new MovementSin(transform, curveMove);
         _currentAdvance = _sinAdvance;
     }
     // Update is called once per frame
     void Update()
     {
         _currentAdvance.Movement();
+        if(CurrentHealth<=0)
+        {
+            gameObject.SetActive(false);
+            Instantiate(ExplotionCam, transform.position, transform.rotation);
+        }
     }
 }

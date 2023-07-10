@@ -11,4 +11,8 @@ public class BasicStats : MonoBehaviour
     {
         CurrentHealth = MaxHealth;
     }
+    public virtual void ReciveDamage(int damage)
+    {
+        CurrentHealth -= damage;
+    }
 }

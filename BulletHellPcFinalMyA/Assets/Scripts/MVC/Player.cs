@@ -14,7 +14,7 @@ public class Player : BasicStats
     {
         LogicMovement();
         LimitsFronts();
-        if(CurrentHealth > 1)
+        if(CurrentHealth >= 1)
         {
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
@@ -49,6 +49,7 @@ public class Player : BasicStats
         }
 
     }
+    //esto va en model
     public void LimitsFronts()
     {
         transform.position = GameManager.Instance.transportPosition(transform.position);
@@ -60,6 +61,7 @@ public class Player : BasicStats
         Instantiate(ParticleObj, transform.position, transform.rotation);
     }
     #endregion
+    //esto va en control
     #region MovementLogic
     public void LogicMovement()
     {
@@ -69,6 +71,7 @@ public class Player : BasicStats
         transform.position += _movementSpeed * Time.deltaTime * _movedirection;
     }
     #endregion
+    //esto va en model
     #region Shoots
     #region NormalShootInvoke
     public void StartNormalShoot()//para instanciar el disparo normal
