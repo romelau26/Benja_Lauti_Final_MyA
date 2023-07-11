@@ -26,6 +26,7 @@ public class Player : BasicStats
     public bool leftOnClick = false;
     public bool TripleShoot = false;
     public bool NormalShoot = false;
+    public bool Shield = false;
     private void Start()
     {
         TimerBuff = MaxTimerBuff;
@@ -77,6 +78,10 @@ public class Player : BasicStats
         if(TripleShoot)
         {
             TimerTripleShoot();
+        }
+        if(Shield)
+        {
+
         }
     }
     //esto va en view
@@ -131,16 +136,9 @@ public class Player : BasicStats
     {
         transform.position = GameManager.Instance.transportPosition(transform.position);
     }
-    #region Shoots
-    #region NormalShootInvoke
-    public void StartNormalShoot()//para instanciar el disparo normal
-    {
-        InvokeRepeating(nameof(Shoot1), 0, shootRate);
-    }
-    public void StopNormalShoot()//para dejar de instanciar el disparo normal
-    {
-        CancelInvoke(nameof(Shoot1));
-    }
+    #region Buffs
+    #region Shield
+
     #endregion
     #region TripleShoot
     public void TimerTripleShoot()
@@ -166,6 +164,16 @@ public class Player : BasicStats
         CancelInvoke(nameof(Shoot3));
     }
     #endregion
+    #endregion
+    #region Shoot
+    public void StartNormalShoot()//para instanciar el disparo normal
+    {
+        InvokeRepeating(nameof(Shoot1), 0, shootRate);
+    }
+    public void StopNormalShoot()//para dejar de instanciar el disparo normal
+    {
+        CancelInvoke(nameof(Shoot1));
+    }
     public void Shoot1()
     {
         var b = factorypool.Instance.GetObj();

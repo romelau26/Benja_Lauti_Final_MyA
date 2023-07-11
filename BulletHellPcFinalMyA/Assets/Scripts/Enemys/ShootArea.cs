@@ -7,6 +7,9 @@ public class ShootArea : BasicStats
     public Transform[] Spawns;
     float ShootRateTime = 0;
     public float shootRate = 0.5f;
+    public GameObject ExplotionCam;
+    [SerializeField] int MinScore;
+    [SerializeField] int MaxScore;
     private void Start()
     {
         CurrentHealth = MaxHealth;
@@ -23,7 +26,10 @@ public class ShootArea : BasicStats
         }
         else
         {
-
+            gameObject.SetActive(false);
+            Instantiate(ExplotionCam, transform.position, transform.rotation);
+            var ValueMoney = Random.Range(MinScore, MaxScore);
+            Player.ScoreAmount += ValueMoney;
         }
 
     }

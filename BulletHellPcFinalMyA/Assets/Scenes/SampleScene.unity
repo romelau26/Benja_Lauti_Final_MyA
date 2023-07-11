@@ -716,7 +716,7 @@ GameObject:
   - component: {fileID: 682062866}
   - component: {fileID: 682062865}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: Piso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2409,7 +2409,7 @@ GameObject:
   - component: {fileID: 1327668804}
   - component: {fileID: 1327668805}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: ShipEnemyArea
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2436,6 +2436,9 @@ MonoBehaviour:
   - {fileID: 1555399299}
   - {fileID: 1379797690}
   shootRate: 1.5
+  ExplotionCam: {fileID: 6514950685857210212, guid: 221200167dae5b64e9342d141d1a3f28, type: 3}
+  MinScore: 500
+  MaxScore: 701
 --- !u!4 &1327668803
 Transform:
   m_ObjectHideFlags: 0
