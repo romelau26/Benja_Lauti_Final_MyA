@@ -7,6 +7,10 @@ public class ShootArea : BasicStats
     public Transform[] Spawns;
     float ShootRateTime = 0;
     public float shootRate = 0.5f;
+    private void Start()
+    {
+        CurrentHealth = MaxHealth;
+    }
     private void Update()
     {
         if(CurrentHealth>1)

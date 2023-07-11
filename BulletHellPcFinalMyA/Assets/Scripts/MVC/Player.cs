@@ -15,6 +15,8 @@ public class Player : BasicStats
     [SerializeField] TMP_Text LifeTimerText;
     [SerializeField] TMP_Text _ScoreUI;
     [SerializeField] float _LifeTime;
+    float TimerBuff;
+    [SerializeField] float MaxTimerBuff;
     public static int ScoreAmount;
     public int MinGetLife;//le puse una cantidad minima para que consigas una vida mas
     private int Minutes, Seconds, Cents;
@@ -26,6 +28,7 @@ public class Player : BasicStats
     public bool NormalShoot = false;
     private void Start()
     {
+        TimerBuff = MaxTimerBuff;
         CurrentHealth = MaxHealth;
         NormalShoot = true;
     }
@@ -71,6 +74,10 @@ public class Player : BasicStats
             Dead();
         }
 
+        if(TripleShoot)
+        {
+            TimerTripleShoot();
+        }
     }
     //esto va en view
     public void LifePlayerUI()
@@ -136,6 +143,16 @@ public class Player : BasicStats
     }
     #endregion
     #region TripleShoot
+    public void TimerTripleShoot()
+    {
+        TimerBuff -= 1 * Time.deltaTime;
+        if (TimerBuff <= 0.1f)
+        {
+            TripleShoot = false;
+            NormalShoot = true;
+            TimerBuff = MaxTimerBuff;
+        }
+    }
     public void StartTripleShoot()
     {
         InvokeRepeating(nameof(Shoot1), 0, shootRate);
@@ -168,8 +185,4 @@ public class Player : BasicStats
         b.transform.forward = PosSpawn3.forward;
     }
     #endregion
-    //private IEnumerator CooldownTripleShoot(float Duration)
-    //{
-    //    yiel
-    //}
 }
