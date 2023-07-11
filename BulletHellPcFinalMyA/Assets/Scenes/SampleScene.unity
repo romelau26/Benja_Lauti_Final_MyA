@@ -2621,6 +2621,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e00a67416bab7849aa967c2adc27a10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  num: 6.92
   bulletPrefab: {fileID: 542003164492687397, guid: 803074a9d8601484f96e009d44cd0d56, type: 3}
   bulletStock: 5
 --- !u!4 &1443945605
@@ -2665,7 +2666,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1455426904}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -6.8, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 59.0038, y: 59.0038, z: 59.0038}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3434,7 +3435,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8801778350504026039, guid: 6113a4048b461cd47b03fd15dcfa269a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 8801778350504026039, guid: 6113a4048b461cd47b03fd15dcfa269a, type: 3}
       propertyPath: m_LocalPosition.y

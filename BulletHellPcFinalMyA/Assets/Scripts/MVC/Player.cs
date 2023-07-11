@@ -135,6 +135,7 @@ public class Player : BasicStats
     public void LimitsFronts()
     {
         transform.position = GameManager.Instance.transportPosition(transform.position);
+        //hola mundo
     }
     #region Buffs
     #region Shield
