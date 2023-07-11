@@ -231,6 +231,10 @@ MonoBehaviour:
   MaxHealth: 5
   CurrentHealth: 0
   ParticleObj: {fileID: 6514950685857210212, guid: db64b24ff065e9046a9f18bf75560205, type: 3}
+  DeadImage: {fileID: 0}
+  LifeTimerText: {fileID: 0}
+  _ScoreUI: {fileID: 0}
+  _LifeTime: 0
   PosSpawn1: {fileID: 3250602598333203436}
   PosSpawn2: {fileID: 2480525902485228866}
   PosSpawn3: {fileID: 7829542525598199642}
@@ -264,7 +268,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!1001 &8801778351591912523
 PrefabInstance:

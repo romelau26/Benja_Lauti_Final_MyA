@@ -52,8 +52,11 @@ MonoBehaviour:
   MaxHealth: 5
   CurrentHealth: 0
   finalPos: {fileID: 0}
+  _pl: {fileID: 8801778350504026056, guid: 6113a4048b461cd47b03fd15dcfa269a, type: 3}
   curveMove: 0.1
   ExplotionCam: {fileID: 6514950685857210212, guid: 221200167dae5b64e9342d141d1a3f28, type: 3}
+  MinScore: 0
+  MaxScore: 0
 --- !u!54 &9068718039293089029
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -68,7 +71,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!65 &7850392172046436359
 BoxCollider:

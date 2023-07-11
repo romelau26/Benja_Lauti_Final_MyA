@@ -2,18 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShootArea : MonoBehaviour
+public class ShootArea : BasicStats
 {
     public Transform[] Spawns;
     float ShootRateTime = 0;
     public float shootRate = 0.5f;
     private void Update()
     {
-        if (Time.time > ShootRateTime) //coldown de disparo
+        if(CurrentHealth>1)
         {
-            ShootRateTime = Time.time + shootRate;
-            Shoot();
+            if (Time.time > ShootRateTime) //coldown de disparo
+            {
+                ShootRateTime = Time.time + shootRate;
+                Shoot();
+            }
         }
+        else
+        {
+
+        }
+
     }
     void Shoot() //Factory y Pool
     {

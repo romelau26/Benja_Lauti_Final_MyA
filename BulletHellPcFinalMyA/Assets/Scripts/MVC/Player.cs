@@ -1,47 +1,70 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
+using UnityEngine.UI;
 public class Player : BasicStats
 {
+    //tema de la vida
+    public Image[] ships;
+    public Sprite FullLife;
+    public Sprite VoidLife;
+    //hasta aca
     [SerializeField] GameObject ParticleObj;
+    [SerializeField] GameObject DeadImage;
+    [SerializeField] TMP_Text LifeTimerText;
+    [SerializeField] TMP_Text _ScoreUI;
+    [SerializeField] float _LifeTime;
+    public static int ScoreAmount;
+    public int MinGetLife;//le puse una cantidad minima para que consigas una vida mas
+    private int Minutes, Seconds, Cents;
     public Transform PosSpawn1,PosSpawn2,PosSpawn3;
     Vector3 _movedirection;
     public float shootRate;
     public bool leftOnClick = false;
     public bool TripleShoot = false;
+    public bool NormalShoot = false;
+    private void Start()
+    {
+        CurrentHealth = MaxHealth;
+        NormalShoot = true;
+    }
     private void Update()
     {
         LogicMovement();
         LimitsFronts();
+        ScoreUI();
+        LifePlayerUI();
         if(CurrentHealth >= 1)
         {
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 leftOnClick = true;
+                if(NormalShoot)
+                {
+                    StartNormalShoot();
+                }
                 if (TripleShoot)
                 {
                     StartTripleShoot();
                 }
-                else
-                {
-                    StartNormalShoot();
-                }
+
 
             }
             else if (Input.GetKeyUp(KeyCode.Mouse0))
             {
                 leftOnClick = false;
+                if(NormalShoot)
+                {
+                    StopNormalShoot();
+                }
                 if (TripleShoot)
                 {
                     StopTripleShoot();
                 }
-                else
-                {
-                    StopNormalShoot();
-                }
 
             }
+            LifeTimeUI();
         }
         else
         {
@@ -49,14 +72,39 @@ public class Player : BasicStats
         }
 
     }
-    //esto va en model
-    public void LimitsFronts()
+    //esto va en view
+    public void LifePlayerUI()
     {
-        transform.position = GameManager.Instance.transportPosition(transform.position);
+        foreach (Image imag in ships)
+        {
+            imag.sprite = VoidLife;
+        }
+        for (int i = 0; i < CurrentHealth; i++)
+        {
+            ships[i].sprite = FullLife;
+        }
+    }
+    public void LifeTimeUI()
+    {
+        _LifeTime += Time.deltaTime;
+        Minutes = (int)(_LifeTime / 60f);
+        Seconds = (int)(_LifeTime - Minutes * 60f);
+        Cents = (int)((_LifeTime - (int)_LifeTime) * 100);
+        LifeTimerText.text = string.Format("{0:00}:{1:00}:{2:00}",Minutes, Seconds, Cents);
+    }
+    public void ScoreUI()
+    {
+        _ScoreUI.text = "" + ScoreAmount.ToString("0");
+        if(CurrentHealth<MaxHealth && ScoreAmount>=MinGetLife)
+        {
+            ScoreAmount -= MinGetLife;
+            CurrentHealth += 1;
+        }
     }
     #region DeadMethod
     public void Dead()
     {
+        DeadImage.SetActive(true);
         gameObject.SetActive(false);
         Instantiate(ParticleObj, transform.position, transform.rotation);
     }
@@ -72,6 +120,10 @@ public class Player : BasicStats
     }
     #endregion
     //esto va en model
+    public void LimitsFronts()
+    {
+        transform.position = GameManager.Instance.transportPosition(transform.position);
+    }
     #region Shoots
     #region NormalShootInvoke
     public void StartNormalShoot()//para instanciar el disparo normal
@@ -116,4 +168,8 @@ public class Player : BasicStats
         b.transform.forward = PosSpawn3.forward;
     }
     #endregion
+    //private IEnumerator CooldownTripleShoot(float Duration)
+    //{
+    //    yiel
+    //}
 }
