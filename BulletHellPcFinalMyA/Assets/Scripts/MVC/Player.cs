@@ -12,6 +12,7 @@ public class Player : BasicStats
     //hasta aca
     [SerializeField] GameObject ParticleObj;
     [SerializeField] GameObject DeadImage;
+    [SerializeField] GameObject ShieldObj;
     [SerializeField] TMP_Text LifeTimerText;
     [SerializeField] TMP_Text _ScoreUI;
     [SerializeField] float _LifeTime;
@@ -32,6 +33,7 @@ public class Player : BasicStats
         TimerBuff = MaxTimerBuff;
         CurrentHealth = MaxHealth;
         NormalShoot = true;
+        ShieldObj.SetActive(false);
     }
     private void Update()
     {
@@ -81,7 +83,7 @@ public class Player : BasicStats
         }
         if(Shield)
         {
-
+            ActiveShield();
         }
     }
     //esto va en view
@@ -135,11 +137,22 @@ public class Player : BasicStats
     public void LimitsFronts()
     {
         transform.position = GameManager.Instance.transportPosition(transform.position);
-        //hola mundo
     }
     #region Buffs
     #region Shield
-
+    public void ActiveShield()
+    {
+        TimerBuff -= 1 * Time.deltaTime;
+        if (TimerBuff <= 0.1f)
+        {
+            ShieldObj.SetActive(false);
+            TimerBuff = MaxTimerBuff;
+        }
+        else
+        {
+            ShieldObj.SetActive(true);
+        }
+    }
     #endregion
     #region TripleShoot
     public void TimerTripleShoot()
