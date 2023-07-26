@@ -52,7 +52,6 @@ MonoBehaviour:
   MaxHealth: 5
   CurrentHealth: 0
   finalPos: {fileID: 0}
-  _pl: {fileID: 8801778350504026056, guid: 6113a4048b461cd47b03fd15dcfa269a, type: 3}
   curveMove: 0.1
   ExplotionCam: {fileID: 6514950685857210212, guid: 221200167dae5b64e9342d141d1a3f28, type: 3}
   MinScore: 0
@@ -84,8 +83,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.56, y: 1, z: 5.14}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2.12, y: 3.58, z: 6.71}
+  m_Center: {x: 0, y: 0, z: -0.9}
 --- !u!1 &7201789676059016350
 GameObject:
   m_ObjectHideFlags: 0

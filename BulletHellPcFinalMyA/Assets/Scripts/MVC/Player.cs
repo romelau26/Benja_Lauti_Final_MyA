@@ -24,7 +24,7 @@ public class Player : BasicStats
     public Transform PosSpawn1,PosSpawn2,PosSpawn3;
     Vector3 _movedirection;
     public float shootRate;
-    public bool leftOnClick = false;
+    bool leftOnClick = false;
     public bool TripleShoot = false;
     public bool NormalShoot = false;
     public bool Shield = false;
@@ -76,8 +76,7 @@ public class Player : BasicStats
         {
             Dead();
         }
-
-        if(TripleShoot)
+        if (TripleShoot)
         {
             TimerTripleShoot();
         }
