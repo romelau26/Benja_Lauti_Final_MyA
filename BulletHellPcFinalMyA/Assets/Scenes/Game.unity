@@ -1598,8 +1598,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d688260b9fc3e614f97c33d245f768f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 538428408751860871, guid: 4670d3b1eb943384c9453701176840ee, type: 3}
-  bulletStock: 5
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -3061,9 +3059,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e00a67416bab7849aa967c2adc27a10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  num: 6.92
-  bulletPrefab: {fileID: 542003164492687397, guid: 803074a9d8601484f96e009d44cd0d56, type: 3}
-  bulletStock: 5
 --- !u!4 &1443945605
 Transform:
   m_ObjectHideFlags: 0
@@ -3899,9 +3894,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1762244841}
     - target: {fileID: 3643256696647203496, guid: 2672a8abc11b953479719f6da7395e35, type: 3}
+      propertyPath: _spawnPoint
+      value: 
+      objectReference: {fileID: 574997114}
+    - target: {fileID: 3643256696647203496, guid: 2672a8abc11b953479719f6da7395e35, type: 3}
       propertyPath: _movementSpeed
       value: 5.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3643256696647203496, guid: 2672a8abc11b953479719f6da7395e35, type: 3}
+      propertyPath: _particlePrefab
+      value: 
+      objectReference: {fileID: 6514950685857210212, guid: 221200167dae5b64e9342d141d1a3f28, type: 3}
     - target: {fileID: 7201789675790333936, guid: 2672a8abc11b953479719f6da7395e35, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -4065,6 +4068,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8801778350504026056, guid: 6113a4048b461cd47b03fd15dcfa269a, type: 3}
+      propertyPath: _spawnPoint
+      value: 
+      objectReference: {fileID: 1600899556}
+    - target: {fileID: 8801778350504026056, guid: 6113a4048b461cd47b03fd15dcfa269a, type: 3}
       propertyPath: leftOnClick
       value: 0
       objectReference: {fileID: 0}
@@ -4080,6 +4087,10 @@ PrefabInstance:
       propertyPath: activeUIimage
       value: 
       objectReference: {fileID: 1195830408}
+    - target: {fileID: 8801778350504026056, guid: 6113a4048b461cd47b03fd15dcfa269a, type: 3}
+      propertyPath: _particlePrefab
+      value: 
+      objectReference: {fileID: 6514950685857210212, guid: db64b24ff065e9046a9f18bf75560205, type: 3}
     - target: {fileID: 8801778350504026056, guid: 6113a4048b461cd47b03fd15dcfa269a, type: 3}
       propertyPath: ships.Array.size
       value: 4

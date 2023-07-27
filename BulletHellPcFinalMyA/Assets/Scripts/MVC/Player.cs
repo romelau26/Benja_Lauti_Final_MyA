@@ -5,12 +5,13 @@ using TMPro;
 using UnityEngine.UI;
 public class Player : BasicStats
 {
-    //tema de la vida
+    [Header ("LIFE")]
     public Image[] ships;
     public Sprite FullLife;
     public Sprite VoidLife;
-    //hasta aca
-    [SerializeField] GameObject ParticleObj;
+
+    [Space] [Space]
+
     [SerializeField] GameObject DeadImage;
     [SerializeField] GameObject ShieldObj;
     [SerializeField] TMP_Text LifeTimerText;
@@ -28,6 +29,11 @@ public class Player : BasicStats
     public bool TripleShoot = false;
     public bool NormalShoot = false;
     public bool Shield = false;
+
+    [Header("PARTICULAS")]
+    [SerializeField] GameObject _particlePrefab;
+    [SerializeField] Transform _spawnPoint;
+
     private void Start()
     {
         TimerBuff = MaxTimerBuff;
@@ -119,7 +125,7 @@ public class Player : BasicStats
     {
         DeadImage.SetActive(true);
         gameObject.SetActive(false);
-        Instantiate(ParticleObj, transform.position, transform.rotation);
+        ParticleFxBuilder();
     }
     #endregion
     //esto va en control
@@ -206,4 +212,12 @@ public class Player : BasicStats
         b.transform.forward = PosSpawn3.forward;
     }
     #endregion
+
+    public void ParticleFxBuilder()
+    {
+        GameObject particle = new ParticleBuilder(_particlePrefab)
+                              .SetPos(_spawnPoint.position)
+                              .SetScale(Vector3.one)
+                              .Done();
+    }
 }
