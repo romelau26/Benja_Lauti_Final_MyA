@@ -211,6 +211,7 @@ GameObject:
   - component: {fileID: 57345632}
   - component: {fileID: 57345634}
   - component: {fileID: 57345633}
+  - component: {fileID: 57345635}
   m_Layer: 5
   m_Name: LeftClick
   m_TagString: Untagged
@@ -280,6 +281,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 57345631}
   m_CullTransparentMesh: 1
+--- !u!114 &57345635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57345631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5df01435a9899134e8f69f08b5c8a297, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ID: ID_LeftClick
+  _langManager: {fileID: 1307494443}
+  _myView: {fileID: 57345633}
 --- !u!1 &73774327
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,6 +384,7 @@ GameObject:
   - component: {fileID: 268388919}
   - component: {fileID: 268388921}
   - component: {fileID: 268388920}
+  - component: {fileID: 268388922}
   m_Layer: 5
   m_Name: Movement
   m_TagString: Untagged
@@ -437,6 +454,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 268388918}
   m_CullTransparentMesh: 1
+--- !u!114 &268388922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268388918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5df01435a9899134e8f69f08b5c8a297, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ID: ID_Movement
+  _langManager: {fileID: 1307494443}
+  _myView: {fileID: 268388920}
 --- !u!1 &338756358
 GameObject:
   m_ObjectHideFlags: 0
@@ -885,7 +917,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5df01435a9899134e8f69f08b5c8a297, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ID: ID_Settings
+  _ID: ID_Controls
   _langManager: {fileID: 1307494443}
   _myView: {fileID: 526363611}
 --- !u!114 &526363611
@@ -1683,6 +1715,7 @@ GameObject:
   - component: {fileID: 1115609622}
   - component: {fileID: 1115609621}
   - component: {fileID: 1115609620}
+  - component: {fileID: 1115609624}
   m_Layer: 5
   m_Name: ExitGame
   m_TagString: Untagged
@@ -1828,6 +1861,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1115609618}
   m_CullTransparentMesh: 1
+--- !u!114 &1115609624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1115609618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5df01435a9899134e8f69f08b5c8a297, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ID: ID_Back
+  _langManager: {fileID: 1307494443}
+  _myView: {fileID: 1115609622}
 --- !u!1 &1207255068
 GameObject:
   m_ObjectHideFlags: 0
@@ -2129,6 +2177,7 @@ GameObject:
   - component: {fileID: 1276484576}
   - component: {fileID: 1276484578}
   - component: {fileID: 1276484577}
+  - component: {fileID: 1276484579}
   m_Layer: 5
   m_Name: Shoot
   m_TagString: Untagged
@@ -2198,6 +2247,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1276484575}
   m_CullTransparentMesh: 1
+--- !u!114 &1276484579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1276484575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5df01435a9899134e8f69f08b5c8a297, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ID: ID_Shoot
+  _langManager: {fileID: 1307494443}
+  _myView: {fileID: 1276484577}
 --- !u!1 &1282874784
 GameObject:
   m_ObjectHideFlags: 0
