@@ -5,19 +5,29 @@ using UnityEngine.UI;
 public class ScreenPause : MonoBehaviour,IScreen
 {
     public Button[] _buttons;
+    public GameObject control;
+    public GameObject PauseMg;
 
     private void Awake()
     {
         ActivateButtons(false);
     }
 
-    public void BTN_Options()
+    public void ActImagControls()
     {
-        ScreenManager.Instance.Push("Canvas_Options");
+        control.SetActive(true);
+        PauseMg.SetActive(false);
     }
-    
+
+    public void DesImagControls()
+    {
+        control.SetActive(false);
+        PauseMg.SetActive(true);
+    }
+
     public void BTN_Back()
     {
+        PauseMenu.instance.CanvPause--;
         ScreenManager.Instance.Pop();
     }
 
