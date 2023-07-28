@@ -8,6 +8,7 @@ TagManager:
   - Shield
   - BulletEnemy
   - BulletPl
+  - EnemyExplosion
   layers:
   - Default
   - TransparentFX

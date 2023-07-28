@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SinShip : BasicStats
 {
-    [SerializeField] Transform finalPos;
     [SerializeField] int MinScore;
     [SerializeField] int MaxScore;
     [SerializeField] float RangeSin;
@@ -13,13 +12,18 @@ public class SinShip : BasicStats
 
     [Header("PARTICULAS")]
     [SerializeField] GameObject _particlePrefab;
-    [SerializeField] Transform _spawnPoint;
 
     private void Start()
     {
         _SinMove = new MovementSin(this.transform, RangeSin);
         CurrentHealth = MaxHealth;
+        _particlePrefab = GameObject.FindGameObjectWithTag("EnemyExplosion");
     }
+
+    private void Awake()
+    {
+    }
+
     void Update()
     {
         if (CurrentHealth<=0)
@@ -40,7 +44,7 @@ public class SinShip : BasicStats
     public void ParticleFxBuilder()
     {
         GameObject particle = new ParticleBuilder(_particlePrefab)
-                              .SetPos(_spawnPoint.position)
+                              .SetPos(transform.position)
                               .SetScale(Vector3.one)
                               .Done();
     }
