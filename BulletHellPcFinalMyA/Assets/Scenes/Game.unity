@@ -1598,6 +1598,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d688260b9fc3e614f97c33d245f768f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 538428408751860871, guid: 4670d3b1eb943384c9453701176840ee, type: 3}
+  bulletStock: 5
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -3059,6 +3061,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e00a67416bab7849aa967c2adc27a10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  num: 0
+  bulletPrefab: {fileID: 542003164492687397, guid: 803074a9d8601484f96e009d44cd0d56, type: 3}
+  bulletStock: 5
 --- !u!4 &1443945605
 Transform:
   m_ObjectHideFlags: 0
