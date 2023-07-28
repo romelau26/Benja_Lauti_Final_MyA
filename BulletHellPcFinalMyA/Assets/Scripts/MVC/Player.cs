@@ -5,12 +5,13 @@ using TMPro;
 using UnityEngine.UI;
 public class Player : BasicStats
 {
-    [Header ("LIFE")]
+    [Header("LIFE")]
     public Image[] ships;
     public Sprite FullLife;
     public Sprite VoidLife;
 
-    [Space] [Space]
+    [Space]
+    [Space]
 
     [SerializeField] GameObject DeadImage;
     [SerializeField] GameObject ShieldObj;
@@ -22,7 +23,7 @@ public class Player : BasicStats
     public static int ScoreAmount;
     public int MinGetLife;//le puse una cantidad minima para que consigas una vida mas
     private int Minutes, Seconds, Cents;
-    public Transform PosSpawn1,PosSpawn2,PosSpawn3;
+    public Transform PosSpawn1, PosSpawn2, PosSpawn3;
     Vector3 _movedirection;
     public float shootRate;
     bool leftOnClick = false;
@@ -47,12 +48,12 @@ public class Player : BasicStats
         LimitsFronts();
         ScoreUI();
         LifePlayerUI();
-        if(CurrentHealth >= 1)
+        if (CurrentHealth >= 1)
         {
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 leftOnClick = true;
-                if(NormalShoot)
+                if (NormalShoot)
                 {
                     StartNormalShoot();
                 }
@@ -66,7 +67,7 @@ public class Player : BasicStats
             else if (Input.GetKeyUp(KeyCode.Mouse0))
             {
                 leftOnClick = false;
-                if(NormalShoot)
+                if (NormalShoot)
                 {
                     StopNormalShoot();
                 }
@@ -86,7 +87,7 @@ public class Player : BasicStats
         {
             TimerTripleShoot();
         }
-        if(Shield)
+        if (Shield)
         {
             ActiveShield();
         }
@@ -109,12 +110,12 @@ public class Player : BasicStats
         Minutes = (int)(_LifeTime / 60f);
         Seconds = (int)(_LifeTime - Minutes * 60f);
         Cents = (int)((_LifeTime - (int)_LifeTime) * 100);
-        LifeTimerText.text = string.Format("{0:00}:{1:00}:{2:00}",Minutes, Seconds, Cents);
+        LifeTimerText.text = string.Format("{0:00}:{1:00}:{2:00}", Minutes, Seconds, Cents);
     }
     public void ScoreUI()
     {
         _ScoreUI.text = "" + ScoreAmount.ToString("0");
-        if(CurrentHealth<MaxHealth && ScoreAmount>=MinGetLife)
+        if (CurrentHealth < MaxHealth && ScoreAmount >= MinGetLife)
         {
             ScoreAmount -= MinGetLife;
             CurrentHealth += 1;
@@ -204,7 +205,7 @@ public class Player : BasicStats
         var b = factorypool.Instance.GetObj();
         b.transform.position = PosSpawn2.position;
         b.transform.forward = PosSpawn2.forward;
-    } 
+    }
     public void Shoot3()
     {
         var b = factorypool.Instance.GetObj();
