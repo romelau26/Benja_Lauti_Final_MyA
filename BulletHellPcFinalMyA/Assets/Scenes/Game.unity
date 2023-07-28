@@ -1595,7 +1595,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 952991835}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d688260b9fc3e614f97c33d245f768f3, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a7996ae1587fae49af8c878b0ffbcdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 538428408751860871, guid: 4670d3b1eb943384c9453701176840ee, type: 3}
@@ -3058,7 +3058,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1443945603}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e00a67416bab7849aa967c2adc27a10, type: 3}
+  m_Script: {fileID: 11500000, guid: 0f7ef6159135fdf41b6c1808b1e45ef9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   num: 0
@@ -3924,7 +3924,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7201789675790333936, guid: 2672a8abc11b953479719f6da7395e35, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.420374
+      value: 33.3
       objectReference: {fileID: 0}
     - target: {fileID: 7201789675790333936, guid: 2672a8abc11b953479719f6da7395e35, type: 3}
       propertyPath: m_LocalRotation.w
