@@ -35,6 +35,11 @@ public class Player : BasicStats
     [SerializeField] GameObject _particlePrefab;
     [SerializeField] Transform _spawnPoint;
 
+    [Header("FEEDBACK")]
+    public CameraShake cameraShake;
+    [SerializeField] float _shakeDuration;
+    [SerializeField] float _shakeMagnitude;
+
     private void Start()
     {
         TimerBuff = MaxTimerBuff;
@@ -189,6 +194,7 @@ public class Player : BasicStats
     public void StartNormalShoot()//para instanciar el disparo normal
     {
         InvokeRepeating(nameof(Shoot1), 0, shootRate);
+        StartCoroutine(cameraShake.Shake(_shakeDuration, _shakeMagnitude));
     }
     public void StopNormalShoot()//para dejar de instanciar el disparo normal
     {

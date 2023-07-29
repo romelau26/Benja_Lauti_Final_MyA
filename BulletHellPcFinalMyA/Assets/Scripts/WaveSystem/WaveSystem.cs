@@ -36,5 +36,4 @@ public class WaveSystem : MonoBehaviour
             _spawnTime = _initialTime;
         }
     }
-
 }

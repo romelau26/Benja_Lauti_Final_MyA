@@ -51,10 +51,13 @@ MonoBehaviour:
   _movementSpeed: 10
   MaxHealth: 5
   CurrentHealth: 0
-  MinScore: 0
-  MaxScore: 0
+  MinScore: 50
+  MaxScore: 100
   RangeSin: 0
   _particlePrefab: {fileID: 0}
+  cameraShake: {fileID: 0}
+  _shakeDuration: 0.2
+  _shakeMagnitude: 1
 --- !u!54 &9068718039293089029
 Rigidbody:
   m_ObjectHideFlags: 0

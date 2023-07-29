@@ -13,21 +13,24 @@ public class SinShip : BasicStats
     [Header("PARTICULAS")]
     [SerializeField] GameObject _particlePrefab;
 
+    [Header("FEEDBACK")]
+    public CameraShake cameraShake;
+    [SerializeField] float _shakeDuration;
+    [SerializeField] float _shakeMagnitude;
+
     private void Start()
     {
         _SinMove = new MovementSin(this.transform, RangeSin);
         CurrentHealth = MaxHealth;
         _particlePrefab = GameObject.FindGameObjectWithTag("EnemyExplosion");
-    }
-
-    private void Awake()
-    {
+        cameraShake = GameObject.FindObjectOfType<CameraShake>();
     }
 
     void Update()
     {
         if (CurrentHealth<=0)
         {
+            StartCoroutine(cameraShake.Shake(_shakeDuration, _shakeMagnitude));
             gameObject.SetActive(false);
             ParticleFxBuilder();
             var ValueMoney = Random.Range(MinScore, MaxScore);
