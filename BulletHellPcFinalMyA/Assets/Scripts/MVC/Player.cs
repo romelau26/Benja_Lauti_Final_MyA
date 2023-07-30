@@ -26,7 +26,7 @@ public class Player : BasicStats
     public Transform PosSpawn1, PosSpawn2, PosSpawn3;
     Vector3 _movedirection;
     public float shootRate;
-    bool leftOnClick = false;
+    float ShootRateTime = 0;
     public bool TripleShoot = false;
     public bool NormalShoot = false;
     public bool Shield = false;
@@ -55,9 +55,8 @@ public class Player : BasicStats
         LifePlayerUI();
         if (CurrentHealth >= 1)
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            if (Input.GetMouseButton(0))
             {
-                leftOnClick = true;
                 if (NormalShoot)
                 {
                     StartNormalShoot();
@@ -66,21 +65,6 @@ public class Player : BasicStats
                 {
                     StartTripleShoot();
                 }
-
-
-            }
-            else if (Input.GetKeyUp(KeyCode.Mouse0))
-            {
-                leftOnClick = false;
-                if (NormalShoot)
-                {
-                    StopNormalShoot();
-                }
-                if (TripleShoot)
-                {
-                    StopTripleShoot();
-                }
-
             }
             LifeTimeUI();
         }
@@ -178,22 +162,26 @@ public class Player : BasicStats
     }
     public void StartTripleShoot()
     {
-        InvokeRepeating(nameof(Shoot1), 0, shootRate);
-        InvokeRepeating(nameof(Shoot2), 0, shootRate);
-        InvokeRepeating(nameof(Shoot3), 0, shootRate);
-    }
-    public void StopTripleShoot()
-    {
-        CancelInvoke(nameof(Shoot1));
-        CancelInvoke(nameof(Shoot2));
-        CancelInvoke(nameof(Shoot3));
+        if (Time.time > ShootRateTime) //coldown de disparo
+        {
+            ShootRateTime = Time.time + shootRate;
+            Shoot1();
+            Shoot2();
+            Shoot3();
+        }
+        StartCoroutine(cameraShake.Shake(_shakeDuration, _shakeMagnitude));
     }
     #endregion
+
     #endregion
     #region Shoot
     public void StartNormalShoot()//para instanciar el disparo normal
     {
-        InvokeRepeating(nameof(Shoot1), 0, shootRate);
+        if (Time.time > ShootRateTime) //coldown de disparo
+        {
+            ShootRateTime = Time.time + shootRate;
+            Shoot1();
+        }
         StartCoroutine(cameraShake.Shake(_shakeDuration, _shakeMagnitude));
     }
     public void StopNormalShoot()//para dejar de instanciar el disparo normal

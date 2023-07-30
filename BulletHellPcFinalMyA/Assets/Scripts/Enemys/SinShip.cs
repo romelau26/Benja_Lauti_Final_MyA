@@ -7,8 +7,7 @@ public class SinShip : BasicStats
     [SerializeField] int MinScore;
     [SerializeField] int MaxScore;
     [SerializeField] float RangeSin;
-    IAdvance _currentPlan;
-    IAdvance _SinMove;
+
 
     [Header("PARTICULAS")]
     [SerializeField] GameObject _particlePrefab;
@@ -20,7 +19,6 @@ public class SinShip : BasicStats
 
     private void Start()
     {
-        _SinMove = new MovementSin(this.transform, RangeSin);
         CurrentHealth = MaxHealth;
         _particlePrefab = GameObject.FindGameObjectWithTag("EnemyExplosion");
         cameraShake = GameObject.FindObjectOfType<CameraShake>();
