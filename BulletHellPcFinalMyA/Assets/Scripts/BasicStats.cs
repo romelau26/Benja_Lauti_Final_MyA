@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BasicStats : MonoBehaviour
 {
+    [Header("BASIC STATS")]
     public float _movementSpeed;
     public int MaxHealth;
     public int CurrentHealth;
