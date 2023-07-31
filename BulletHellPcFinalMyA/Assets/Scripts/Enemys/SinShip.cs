@@ -7,7 +7,7 @@ public class SinShip : BasicStats
     [SerializeField] int MinScore;
     [SerializeField] int MaxScore;
     [SerializeField] float RangeSin;
-
+    [SerializeField] Player pl;
 
     [Header("PARTICULAS")]
     [SerializeField] GameObject _particlePrefab;
@@ -26,20 +26,30 @@ public class SinShip : BasicStats
 
     void Update()
     {
+        if(CurrentHealth>0)
+        {
+            Vector3 pos = transform.position;
+            pos.z -= _movementSpeed * Time.deltaTime;
+            transform.position = pos;
+        }
         if (CurrentHealth<=0)
         {
             StartCoroutine(cameraShake.Shake(_shakeDuration, _shakeMagnitude));
             gameObject.SetActive(false);
             ParticleFxBuilder();
-            var ValueMoney = Random.Range(MinScore, MaxScore);
-            Player.ScoreAmount += ValueMoney;
+            if(pl.DoblePoints==true)
+            {
+                var ValueMoney = Random.Range(MinScore, MaxScore);
+                Player.ScoreAmount += ValueMoney * 2;
+            }
+            else
+            {
+                var ValueMoney = Random.Range(MinScore, MaxScore);
+                Player.ScoreAmount += ValueMoney;
+            }
+
+
         }
-    }
-    private void FixedUpdate()
-    {
-        Vector3 pos = transform.position;
-        pos.z -= _movementSpeed * Time.fixedDeltaTime;
-        transform.position = pos;
     }
 
     public void ParticleFxBuilder()

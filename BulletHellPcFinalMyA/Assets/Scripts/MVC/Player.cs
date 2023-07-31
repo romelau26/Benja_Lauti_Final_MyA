@@ -27,9 +27,10 @@ public class Player : BasicStats
     Vector3 _movedirection;
     public float shootRate;
     float ShootRateTime = 0;
-    public bool TripleShoot = false;
-    public bool NormalShoot = false;
-    public bool Shield = false;
+    public bool TripleShoot = false;//bufo de triple tiro
+    public bool NormalShoot = false;//tiro normal
+    public bool Shield = false;//se active el bufo del escudo q te da inmunidad
+    public bool DoblePoints = false;//para que los puntos q consigas sean dobles
 
     [Header("PARTICULAS")]
     [SerializeField] GameObject _particlePrefab;

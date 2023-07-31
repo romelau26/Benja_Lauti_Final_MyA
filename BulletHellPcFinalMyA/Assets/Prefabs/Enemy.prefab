@@ -54,6 +54,7 @@ MonoBehaviour:
   MinScore: 50
   MaxScore: 100
   RangeSin: 0
+  pl: {fileID: 8801778350504026056, guid: 6113a4048b461cd47b03fd15dcfa269a, type: 3}
   _particlePrefab: {fileID: 0}
   cameraShake: {fileID: 0}
   _shakeDuration: 0.2

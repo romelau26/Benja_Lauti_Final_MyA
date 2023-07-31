@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class SinMovement : MonoBehaviour
 {
-    private void FixedUpdate()
+    float SincenterX;
+    public float amplitud;
+    public float frecuencia=0.5f;
+    private void Start()
+    {
+        SincenterX = transform.position.x;
+    }
+    private void Update()
     {
         Vector3 pos = transform.position;
-        float sin = Mathf.Sin(pos.z);
-        pos.x = sin;
+        float sin = Mathf.Sin(pos.z * frecuencia) * amplitud;
+        pos.x = SincenterX + sin;
         transform.position = pos;
     }
 }

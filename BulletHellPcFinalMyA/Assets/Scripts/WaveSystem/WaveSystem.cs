@@ -26,7 +26,7 @@ public class WaveSystem : MonoBehaviour
     void WaveGenerator()
     {
         _spawnTime -= 1 * Time.deltaTime;
-
+        
         if (_spawnTime <= 0 &&  _maxCantShips < _currentShipsWave)
         {
             Debug.Log("Spawnea nave");
@@ -36,4 +36,7 @@ public class WaveSystem : MonoBehaviour
             _spawnTime = _initialTime;
         }
     }
+
 }
+
+

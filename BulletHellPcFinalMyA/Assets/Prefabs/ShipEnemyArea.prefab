@@ -121,6 +121,7 @@ MonoBehaviour:
   - {fileID: 3263038718327001209}
   - {fileID: 3263038720171846212}
   - {fileID: 3263038720013214333}
+  pl: {fileID: 8801778350504026056, guid: 6113a4048b461cd47b03fd15dcfa269a, type: 3}
   shootRate: 1.5
   ExplotionCam: {fileID: 6514950685857210212, guid: 221200167dae5b64e9342d141d1a3f28, type: 3}
   MinScore: 500
