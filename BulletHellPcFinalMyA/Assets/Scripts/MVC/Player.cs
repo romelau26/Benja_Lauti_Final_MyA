@@ -81,6 +81,10 @@ public class Player : BasicStats
         {
             ActiveShield();
         }
+        if(DoblePoints)
+        {
+            DoblePointsTime();
+        }
     }
     //esto va en view
     public void LifePlayerUI()
@@ -110,6 +114,14 @@ public class Player : BasicStats
             ScoreAmount -= MinGetLife;
             CurrentHealth += 1;
         }
+    }
+    public void AddPoints(int Pointsadd)
+    {
+        if(DoblePoints)
+        {
+            Pointsadd *= 2;
+        }
+        ScoreAmount += Pointsadd;
     }
     #region DeadMethod
     public void Dead()
@@ -141,6 +153,7 @@ public class Player : BasicStats
         TimerBuff -= 1 * Time.deltaTime;
         if (TimerBuff <= 0.1f)
         {
+            Shield = false;
             ShieldObj.SetActive(false);
             TimerBuff = MaxTimerBuff;
         }
@@ -173,7 +186,17 @@ public class Player : BasicStats
         StartCoroutine(cameraShake.Shake(_shakeDuration, _shakeMagnitude));
     }
     #endregion
-
+    #region DoblePoints
+    public void DoblePointsTime()
+    {
+        TimerBuff -= Time.deltaTime;
+        if (TimerBuff<=0.1f)
+        {
+            TimerBuff = MaxTimerBuff;
+            DoblePoints = false;
+        }
+    }
+    #endregion
     #endregion
     #region Shoot
     public void StartNormalShoot()//para instanciar el disparo normal

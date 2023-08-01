@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class SinShip : BasicStats
 {
-    [SerializeField] int MinScore;
-    [SerializeField] int MaxScore;
     [SerializeField] float RangeSin;
-    [SerializeField] Player pl;
 
     [Header("PARTICULAS")]
     [SerializeField] GameObject _particlePrefab;
@@ -23,7 +20,6 @@ public class SinShip : BasicStats
         _particlePrefab = GameObject.FindGameObjectWithTag("EnemyExplosion");
         cameraShake = GameObject.FindObjectOfType<CameraShake>();
     }
-
     void Update()
     {
         if(CurrentHealth>0)
@@ -37,18 +33,9 @@ public class SinShip : BasicStats
             StartCoroutine(cameraShake.Shake(_shakeDuration, _shakeMagnitude));
             gameObject.SetActive(false);
             ParticleFxBuilder();
-            if(pl.DoblePoints==true)
-            {
-                var ValueMoney = Random.Range(MinScore, MaxScore);
-                Player.ScoreAmount += ValueMoney * 2;
-            }
-            else
-            {
-                var ValueMoney = Random.Range(MinScore, MaxScore);
-                Player.ScoreAmount += ValueMoney;
-            }
-
-
+            Player player = FindObjectOfType<Player>();
+            var ValuePoints = Random.Range(50, 101);
+            player.AddPoints(ValuePoints);
         }
     }
 
