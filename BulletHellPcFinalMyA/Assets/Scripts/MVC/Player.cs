@@ -179,9 +179,9 @@ public class Player : BasicStats
         if (Time.time > ShootRateTime) //coldown de disparo
         {
             ShootRateTime = Time.time + shootRate;
-            Shoot1();
-            Shoot2();
-            Shoot3();
+            Shoot(PosSpawn1);
+            Shoot(PosSpawn2);
+            Shoot(PosSpawn3);
         }
         StartCoroutine(cameraShake.Shake(_shakeDuration, _shakeMagnitude));
     }
@@ -204,31 +204,15 @@ public class Player : BasicStats
         if (Time.time > ShootRateTime) //coldown de disparo
         {
             ShootRateTime = Time.time + shootRate;
-            Shoot1();
+            Shoot(PosSpawn1);
         }
         StartCoroutine(cameraShake.Shake(_shakeDuration, _shakeMagnitude));
     }
-    public void StopNormalShoot()//para dejar de instanciar el disparo normal
-    {
-        CancelInvoke(nameof(Shoot1));
-    }
-    public void Shoot1()
+    public void Shoot(Transform spawn)
     {
         var b = factorypool.Instance.GetObj();
-        b.transform.position = PosSpawn1.position;
-        b.transform.forward = PosSpawn1.forward;
-    }
-    public void Shoot2()
-    {
-        var b = factorypool.Instance.GetObj();
-        b.transform.position = PosSpawn2.position;
-        b.transform.forward = PosSpawn2.forward;
-    }
-    public void Shoot3()
-    {
-        var b = factorypool.Instance.GetObj();
-        b.transform.position = PosSpawn3.position;
-        b.transform.forward = PosSpawn3.forward;
+        b.transform.position = spawn.position;
+        b.transform.forward = spawn.forward;
     }
     #endregion
 
