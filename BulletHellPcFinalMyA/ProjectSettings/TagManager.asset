@@ -9,6 +9,7 @@ TagManager:
   - BulletEnemy
   - BulletPl
   - EnemyExplosion
+  - Ball_EnemyBullet
   layers:
   - Default
   - TransparentFX
