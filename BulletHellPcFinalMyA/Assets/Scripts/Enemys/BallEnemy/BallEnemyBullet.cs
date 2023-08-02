@@ -11,7 +11,7 @@ public class BallEnemyBullet : HitBox
 
     private void Update()
     {
-        transform.position += (new Vector3(0, 0, -1) * speed) * Time.deltaTime;
+        transform.position += -transform.forward * speed * Time.deltaTime;
         _currentLifeTime -= Time.deltaTime;
         if (_currentLifeTime <= 0) Destroy(this.gameObject);
     }
