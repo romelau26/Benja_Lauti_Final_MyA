@@ -28,7 +28,7 @@ public class SpawnBuffs : MonoBehaviour
                 XposSpawn = Random.Range(-57, 58);
                 ZposSpawn = Random.Range(-33, 38);
                 int SelectedBuff = Random.Range(0, Buffs.Length);
-                Instantiate(Buffs[SelectedBuff], new Vector3(XposSpawn, 0, ZposSpawn), Buffs[SelectedBuff].transform.rotation);
+                Instantiate(Buffs[SelectedBuff], new Vector3(XposSpawn, 2, ZposSpawn), Buffs[SelectedBuff].transform.rotation);
                 CurrentBuff++;
                 Currenttimer = MaxTimer;
             }

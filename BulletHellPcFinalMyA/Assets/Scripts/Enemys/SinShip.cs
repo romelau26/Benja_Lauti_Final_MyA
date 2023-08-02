@@ -38,7 +38,10 @@ public class SinShip : BasicStats
             player.AddPoints(ValuePoints);
         }
     }
-
+    public void LimitsFronts()
+    {
+        transform.position = GameManager.Instance.transportPosition(transform.position);
+    }
     public void ParticleFxBuilder()
     {
         GameObject particle = new ParticleBuilder(_particlePrefab)

@@ -101,17 +101,17 @@ public class WaveSpawner : MonoBehaviour
     {
         _spawnZone.x = Random.Range(-60f, 60f);
         int numenemyProbability = Random.Range(0, 101);
-        if(numenemyProbability>=0 && numenemyProbability<=75)
+        if(numenemyProbability>=0 && numenemyProbability<=60)
         {
             Instantiate(_enemy[0], _spawnZone, transform.rotation);
         }
-        else if(numenemyProbability > 75 && numenemyProbability <= 85)
+        else if(numenemyProbability > 60 && numenemyProbability <= 85)
         {
             Instantiate(_enemy[1], _spawnZone, transform.rotation);
         }
         else if(numenemyProbability>85 && numenemyProbability<=95)
         {
-            Debug.Log("soy dios te mato");
+            Instantiate(_enemy[2], _spawnZone, transform.rotation);
         }
     }
 }

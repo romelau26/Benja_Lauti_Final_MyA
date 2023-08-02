@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3643256696647203496}
   - component: {fileID: 9068718039293089029}
   - component: {fileID: 7850392172046436359}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -51,10 +51,7 @@ MonoBehaviour:
   _movementSpeed: 10
   MaxHealth: 5
   CurrentHealth: 0
-  MinScore: 50
-  MaxScore: 100
   RangeSin: 0
-  pl: {fileID: 8801778350504026056, guid: 6113a4048b461cd47b03fd15dcfa269a, type: 3}
   _particlePrefab: {fileID: 0}
   cameraShake: {fileID: 0}
   _shakeDuration: 0.2
@@ -99,7 +96,7 @@ GameObject:
   - component: {fileID: 7201789676059016351}
   - component: {fileID: 7201789676059016346}
   - component: {fileID: 7201789676059016345}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -241,6 +238,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 537741eada6c8a042bee9cd86949e6d2, type: 3}
       propertyPath: m_Name
       value: space ship.FBX
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 537741eada6c8a042bee9cd86949e6d2, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 537741eada6c8a042bee9cd86949e6d2, type: 3}

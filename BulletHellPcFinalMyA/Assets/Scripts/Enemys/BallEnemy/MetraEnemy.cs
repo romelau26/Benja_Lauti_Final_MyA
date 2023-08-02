@@ -20,7 +20,6 @@ public class MetraEnemy : BasicStats
         _currentIDPoint = 0;
         CurrentHealth = MaxHealth;
         _currentShootPoint = _shootPointsOrder[_currentIDPoint];
-        _bulletPrefab = GameObject.FindGameObjectWithTag("Ball_EnemyBullet");
     }
 
     private void Update()
@@ -38,7 +37,7 @@ public class MetraEnemy : BasicStats
         {
             _currentShootPoint = _shootPointsOrder[_currentIDPoint];
             Vector3 spawn = _shootPointsOrder[_currentIDPoint].transform.position;
-            Instantiate(_bulletPrefab, spawn, Quaternion.identity);
+            FactoryShoot(spawn);
             _currentIDPoint++;
             if (_currentIDPoint >= _shootPointsOrder.Length)
             {
@@ -48,11 +47,11 @@ public class MetraEnemy : BasicStats
             else _currentShootTime = shootTime;
         }
     }
-
-    //public void FactoryShoot(Vector3 spawn)
-    //{
-    //    var b = BallEnemy_PF.Instance.GetObj();
-    //    b.transform.position = spawn;
-    //    b.transform.forward = spawn;
-    //}
+    
+    public void FactoryShoot(Vector3 spawn)
+    {
+        var b = FactoryEnemy.Instance.GetObj();
+        b.transform.position = spawn;
+        b.transform.forward = spawn;
+    }
 }
