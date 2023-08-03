@@ -37,7 +37,8 @@ public class MetraEnemy : BasicStats
         {
             _currentShootPoint = _shootPointsOrder[_currentIDPoint];
             Vector3 spawn = _shootPointsOrder[_currentIDPoint].transform.position;
-            FactoryShoot(spawn);
+            Instantiate(_bulletPrefab, _currentShootPoint.transform.position, Quaternion.identity);
+            //FactoryShoot(spawn); NO PUDIMOS HACER ANDAR EL FACTORY ACA
             _currentIDPoint++;
             if (_currentIDPoint >= _shootPointsOrder.Length)
             {
@@ -48,10 +49,10 @@ public class MetraEnemy : BasicStats
         }
     }
     
-    public void FactoryShoot(Vector3 spawn)
-    {
-        var b = FactoryEnemy.Instance.GetObj();
-        b.transform.position = spawn;
-        b.transform.forward = spawn;
-    }
+    //public void FactoryShoot(Vector3 spawn)
+    //{
+    //    var b = FactoryEnemy.Instance.GetObj();
+    //    b.transform.position = spawn;
+    //    b.transform.forward = spawn;
+    //}
 }

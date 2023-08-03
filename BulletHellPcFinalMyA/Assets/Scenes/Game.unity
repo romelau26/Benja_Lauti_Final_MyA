@@ -1860,7 +1860,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 952991835}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d688260b9fc3e614f97c33d245f768f3, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a7996ae1587fae49af8c878b0ffbcdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 538428408751860871, guid: 4670d3b1eb943384c9453701176840ee, type: 3}
@@ -3405,9 +3405,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1443945603}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e00a67416bab7849aa967c2adc27a10, type: 3}
+  m_Script: {fileID: 11500000, guid: 0f7ef6159135fdf41b6c1808b1e45ef9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  num: 0
   bulletPrefab: {fileID: 542003164492687397, guid: 803074a9d8601484f96e009d44cd0d56, type: 3}
   bulletStock: 5
 --- !u!4 &1443945605
@@ -4019,6 +4020,7 @@ MonoBehaviour:
     enemy:
     - {fileID: 7201789675790333936, guid: 2672a8abc11b953479719f6da7395e35, type: 3}
     - {fileID: 3245902329640960218, guid: 03dd83cdfbc25094fb223a703cdf4da7, type: 3}
+    - {fileID: 3720222312866863397, guid: d0fb43bcba64ccc439c468bb0240936b, type: 3}
     Count: 5
     rate: 1.5
   TimerBetweenWaves: 2.5

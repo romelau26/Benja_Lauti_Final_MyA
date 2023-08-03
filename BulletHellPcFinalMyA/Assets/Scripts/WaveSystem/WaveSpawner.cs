@@ -115,16 +115,21 @@ public class WaveSpawner : MonoBehaviour
     {
         _spawnZone.x = Random.Range(-60f, 60f);
         int numenemyProbability = Random.Range(0, 101);
-        if(numenemyProbability>=0 && numenemyProbability<=75)
+        if(numenemyProbability>=0 && numenemyProbability<=50)
         {
             //Instantiate(_enemy[0], _spawnZone, transform.rotation);
             Transform hijoInstanciado = Instantiate(_enemy[0], _spawnZone, transform.rotation);
             hijoInstanciado.SetParent(AllGame.transform);
         }
-        else if(numenemyProbability > 75 && numenemyProbability <= 101)
+        else if(numenemyProbability > 50 && numenemyProbability <= 75)
         {
             //Instantiate(_enemy[1], _spawnZone, transform.rotation);
             Transform hijoInstanciado = Instantiate(_enemy[1], _spawnZone, transform.rotation);
+            hijoInstanciado.SetParent(AllGame.transform);
+        }
+        else if(numenemyProbability > 75 && numenemyProbability <= 101)
+        {
+            Transform hijoInstanciado = Instantiate(_enemy[2], _spawnZone, transform.rotation);
             hijoInstanciado.SetParent(AllGame.transform);
         }
     }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7629376877219865631}
   - component: {fileID: 3941941881744722239}
   - component: {fileID: 2572108979566852662}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder Inner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 6258973530688548056}
   - component: {fileID: 7400214261732875078}
   - component: {fileID: 1349592384998672702}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder Internal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 2637355366762233984}
   - component: {fileID: 8961422629846805276}
   - component: {fileID: 3455741348062397547}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sphere Main
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 4615820271579868828}
   - component: {fileID: 6241820292664759793}
   - component: {fileID: 1381120421149252888}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sphere Lower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -341,7 +341,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4959411408689290625}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ShootPoint (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -356,7 +356,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2703313061398834717}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 0, z: -1}
+  m_LocalPosition: {x: 2, y: 0, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -374,7 +374,7 @@ GameObject:
   - component: {fileID: 5072285587016091981}
   - component: {fileID: 234578822540722195}
   - component: {fileID: 3299588424519045970}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder Lower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -457,7 +457,7 @@ GameObject:
   - component: {fileID: 4590003592727320503}
   - component: {fileID: 6715259232852328718}
   - component: {fileID: 5420641860806675251}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Antenna Inner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -539,9 +539,11 @@ GameObject:
   m_Component:
   - component: {fileID: 3720222312866863397}
   - component: {fileID: 8198892635311318848}
-  m_Layer: 0
+  - component: {fileID: 4102132234842454940}
+  - component: {fileID: 47288317806148515}
+  m_Layer: 7
   m_Name: ballShip
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -604,6 +606,36 @@ MonoBehaviour:
   - {fileID: 8460517599558618558}
   - {fileID: 7798741151791735825}
   _bulletPrefab: {fileID: 1222487115188633217, guid: da5f79eff792a344f8783f113ab37d61, type: 3}
+--- !u!136 &4102132234842454940
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4101427785612460959}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.77
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &47288317806148515
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4101427785612460959}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4378120754846518311
 GameObject:
   m_ObjectHideFlags: 0
@@ -615,7 +647,7 @@ GameObject:
   - component: {fileID: 7274140421871658690}
   - component: {fileID: 5633351838973715575}
   - component: {fileID: 2218895056997699484}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sphere Lower Inner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -698,7 +730,7 @@ GameObject:
   - component: {fileID: 2382647132864831936}
   - component: {fileID: 6880526591441947648}
   - component: {fileID: 1533471856446880967}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Antenna Main
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -781,7 +813,7 @@ GameObject:
   - component: {fileID: 4515692288528906232}
   - component: {fileID: 3770308404875388168}
   - component: {fileID: 7917122616517082489}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder Upper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -862,7 +894,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7266172865996417277}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ShootPoint (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -877,7 +909,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6149469587476045770}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 0, z: -1}
+  m_LocalPosition: {x: 1, y: 0, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -893,7 +925,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8460517599558618558}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ShootPoint (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -908,7 +940,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6483421862392289041}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: 0, z: -1}
+  m_LocalPosition: {x: -2, y: 0, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -926,7 +958,7 @@ GameObject:
   - component: {fileID: 3839800245119939476}
   - component: {fileID: 1973881736529931327}
   - component: {fileID: 180424777490994961}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Antenna Rings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1007,7 +1039,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2336625303008123199}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1022,7 +1054,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6740136040286983238}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1038,7 +1070,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7798741151791735825}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ShootPoint (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1053,7 +1085,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7509694719556123026}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: 0, z: -1}
+  m_LocalPosition: {x: -1, y: 0, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1071,7 +1103,7 @@ GameObject:
   - component: {fileID: 2549177620259207236}
   - component: {fileID: 6048061568552883315}
   - component: {fileID: 8276747943885485012}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Antenna Outer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
