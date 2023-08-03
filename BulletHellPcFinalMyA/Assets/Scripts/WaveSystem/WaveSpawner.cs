@@ -17,21 +17,25 @@ public class WaveSpawner : MonoBehaviour
     }
     //visual
     [SerializeField] TMP_Text WaveText;
-    private int WaveCount;
+    [SerializeField] int WaveCount;
     public Wave[] waves;
     private int nextWave = 0;
     public float TimerBetweenWaves;//puede ser 1 minuto entre cada oleada
     float WaveCountDown = 0f;
     private SpawnStates state = SpawnStates.Counting;
     private float searchCountDown=1f;
+    private int shipboss = 0;
     [SerializeField] Vector3 _spawnZone;
+    public Transform boss;//los tipos de enemigos que se van a crear
     private void Start()
     {
         WaveCountDown = TimerBetweenWaves;
     }
     private void Update()
     {
-        if(state==SpawnStates.Waiting)
+        if(WaveCount<10 && shipboss==0)
+        {
+                    if(state==SpawnStates.Waiting)
         {
             if(!EnemyisAlive())
             {
@@ -53,6 +57,14 @@ public class WaveSpawner : MonoBehaviour
         else
         {
             WaveCountDown -= Time.deltaTime;
+        }
+        }
+
+        if(WaveCount>=10 && shipboss==0)
+        {
+            StopAllCoroutines();
+            SpawnBoss(boss);
+            shipboss++;
         }
     }
 
@@ -97,21 +109,22 @@ public class WaveSpawner : MonoBehaviour
         state = SpawnStates.Waiting;
         yield break;
     }
-    public void SpawnEnemys(Transform[] _enemy)
+    public void SpawnEnemys(Transform[] _enemy)//si queres spawnear otro enemigo arega otro if y pone enemy[al numero en el que esta el nuevo enemigo]
     {
         _spawnZone.x = Random.Range(-60f, 60f);
         int numenemyProbability = Random.Range(0, 101);
-        if(numenemyProbability>=0 && numenemyProbability<=60)
+        if(numenemyProbability>=0 && numenemyProbability<=75)
         {
             Instantiate(_enemy[0], _spawnZone, transform.rotation);
         }
-        else if(numenemyProbability > 60 && numenemyProbability <= 85)
+        else if(numenemyProbability > 75 && numenemyProbability <= 101)
         {
             Instantiate(_enemy[1], _spawnZone, transform.rotation);
         }
-        else if(numenemyProbability>85 && numenemyProbability<=95)
-        {
-            Instantiate(_enemy[2], _spawnZone, transform.rotation);
-        }
+    }
+    public void SpawnBoss(Transform _Boss)
+    {
+        _spawnZone.x = Random.Range(-60f, 60f);
+        Instantiate(_Boss, _spawnZone, transform.rotation);
     }
 }

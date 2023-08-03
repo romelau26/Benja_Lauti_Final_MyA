@@ -4,34 +4,33 @@ using UnityEngine;
 
 public class SpawnBuffs : MonoBehaviour
 {
-    public int MaxBuffs;
-    public int CurrentBuff;
+    public GameObject[] objetosASpawnear;
+    public float tiempoEntreSpawns = 5f;
+    public int objetosSpawned = 0;
+    private int maxObjetosEnEscena = 1;
     private float XposSpawn;
     private float ZposSpawn;
-    public GameObject [] Buffs;
-    public float MaxTimer;
-    public float Currenttimer;
-
-
-    void Start()
+    private void Start()
     {
-        Currenttimer = MaxTimer;
+        
     }
-
-    void Update()
+    private void Update()
     {
-        if (CurrentBuff != MaxBuffs)
-        {
-            Currenttimer += 1f * Time.deltaTime;
-            if (Currenttimer >= MaxTimer)
+        StartCoroutine(SpawnObject());
+    }
+    private IEnumerator SpawnObject()
+    {
+
+            if (objetosSpawned < maxObjetosEnEscena)
             {
                 XposSpawn = Random.Range(-57, 58);
                 ZposSpawn = Random.Range(-33, 38);
-                int SelectedBuff = Random.Range(0, Buffs.Length);
-                Instantiate(Buffs[SelectedBuff], new Vector3(XposSpawn, 2, ZposSpawn), Buffs[SelectedBuff].transform.rotation);
-                CurrentBuff++;
-                Currenttimer = MaxTimer;
+                int SelectedBuff = Random.Range(0, objetosASpawnear.Length);
+                Instantiate(objetosASpawnear[SelectedBuff], new Vector3(XposSpawn, 2, ZposSpawn), Quaternion.identity);
+                objetosSpawned++;
             }
-        }
+            yield return new WaitForSeconds(tiempoEntreSpawns);
+        
     }
 }
+

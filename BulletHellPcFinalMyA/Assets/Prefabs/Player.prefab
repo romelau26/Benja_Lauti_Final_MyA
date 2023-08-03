@@ -260,9 +260,9 @@ GameObject:
   - component: {fileID: 1758970282036839502}
   - component: {fileID: 7936096634277257427}
   - component: {fileID: 2669605932093480104}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Shield
-  m_TagString: Untagged
+  m_TagString: Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

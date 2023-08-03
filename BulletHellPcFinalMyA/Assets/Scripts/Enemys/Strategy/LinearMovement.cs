@@ -5,12 +5,12 @@ using UnityEngine;
 public class LinearMovement : IMovement
 {
     Transform _bossShip;
-    Transform[] _waypoints;
+    GameObject[] _waypoints;
     int _currentWaypoint;
     float _speed;
     float _radius;
 
-    public LinearMovement(Transform bossShip, float speed, Transform[] waypoints, int currentWaypoint, float radius)
+    public LinearMovement(Transform bossShip, float speed, GameObject[] waypoints, int currentWaypoint, float radius)
     {
         _bossShip = bossShip;
         _speed = speed;
@@ -21,13 +21,14 @@ public class LinearMovement : IMovement
 
     public void Movement()
     {
-        Vector3 dir = _waypoints[_currentWaypoint].transform.position - _bossShip.position;
-        dir.Normalize();
-        _bossShip.position += dir * _speed * Time.deltaTime;
-
-        if (dir.magnitude <= _radius)
-            Debug.Log("A");
-        if (_currentWaypoint >= _waypoints.Length)
-            _currentWaypoint = 0;
+        if(Vector3.Distance(_bossShip.position,_waypoints[_currentWaypoint].transform.position)<0.1f)
+        {
+            _currentWaypoint++;
+            if(_currentWaypoint>=_waypoints.Length)
+            {
+                _currentWaypoint = 0;
+            }
+        }
+        _bossShip.position = Vector3.MoveTowards(_bossShip.position, _waypoints[_currentWaypoint].transform.position,_speed*Time.deltaTime);
     }
 }

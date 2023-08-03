@@ -17,11 +17,11 @@ public class SinShip : BasicStats
     private void Start()
     {
         CurrentHealth = MaxHealth;
-        _particlePrefab = GameObject.FindGameObjectWithTag("EnemyExplosion");
         cameraShake = GameObject.FindObjectOfType<CameraShake>();
     }
     void Update()
     {
+        LimitsFronts();
         if(CurrentHealth>0)
         {
             Vector3 pos = transform.position;

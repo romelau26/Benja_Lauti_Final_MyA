@@ -123,12 +123,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 538428408624400825}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22636d767b5cf7447a37f0bad8cb2301, type: 3}
+  m_Script: {fileID: 11500000, guid: f5425909ec5239c44b80e0053de7022c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedRoot: 0
+  speedRoot: 20
 --- !u!1 &538428408751860865
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,12 +173,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 538428408751860865}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c66f021f28ad46c48afdffae9997e9a8, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d6b95ffe9a05d94cac683de99d4eb31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Damage: 1
-  speed: 20
-  MaxLifetime: 100
+  speed: 15
+  MaxLifetime: 5
   _currentLifeTime: 0
 --- !u!135 &2797698511228067239
 SphereCollider:

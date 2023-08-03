@@ -52,7 +52,7 @@ MonoBehaviour:
   MaxHealth: 5
   CurrentHealth: 0
   RangeSin: 0
-  _particlePrefab: {fileID: 0}
+  _particlePrefab: {fileID: 6514950685857210212, guid: 221200167dae5b64e9342d141d1a3f28, type: 3}
   cameraShake: {fileID: 0}
   _shakeDuration: 0.2
   _shakeMagnitude: 1
