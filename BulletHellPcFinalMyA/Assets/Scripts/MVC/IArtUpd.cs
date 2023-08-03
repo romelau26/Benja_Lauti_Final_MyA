@@ -5,4 +5,5 @@ using UnityEngine;
 public interface IArtUpd
 {
     public void ArtificialUpdate();
+    public void OnFixedUpader();
 }

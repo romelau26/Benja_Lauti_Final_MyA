@@ -440,6 +440,8 @@ GameObject:
   - component: {fileID: 8801778350504026056}
   - component: {fileID: 157981206678812039}
   - component: {fileID: 5155915934673442620}
+  - component: {fileID: 1378013625400641426}
+  - component: {fileID: 7097800148904096904}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -480,7 +482,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8801778350504026038}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0c122500145f08b4eb78118ab1a0b475, type: 3}
   m_Name: 
@@ -501,7 +503,7 @@ MonoBehaviour:
   _ScoreUI: {fileID: 0}
   _LifeTime: 0
   MaxTimerBuff: 0
-  MinGetLife: 0
+  MinGetLife: 750
   PosSpawn1: {fileID: 3250602598333203436}
   PosSpawn2: {fileID: 2480525902485228866}
   PosSpawn3: {fileID: 7829542525598199642}
@@ -550,6 +552,69 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &1378013625400641426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8801778350504026038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9996fdcfb3a1f624ea48c7631de9c6cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _movementSpeed: 25
+  MaxHealth: 5
+  CurrentHealth: 0
+--- !u!114 &7097800148904096904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8801778350504026038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 804bfe9a86954234ba969460a972174b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _movementSpeed: 25
+  MaxHealth: 5
+  CurrentHealth: 0
+  ShieldUI: {fileID: 0}
+  TripleShootUI: {fileID: 0}
+  MultipleShootUI: {fileID: 0}
+  DoblePointsUI: {fileID: 0}
+  LifeTimerText: {fileID: 0}
+  _ScoreUI: {fileID: 0}
+  _particlePrefab: {fileID: 0}
+  _spawnPoint: {fileID: 0}
+  DeadImage: {fileID: 0}
+  ShieldObj: {fileID: 7704528827331096948}
+  PosSpawn1: {fileID: 3250602598333203436}
+  PosSpawn2: {fileID: 2480525902485228866}
+  PosSpawn3: {fileID: 7829542525598199642}
+  PosSpawn4: {fileID: 1708257262445917486}
+  PosSpawn5: {fileID: 2890883974755696392}
+  PosSpawn6: {fileID: 2730405800945535108}
+  PosSpawn7: {fileID: 3172062300125741751}
+  PosSpawn8: {fileID: 5671750157901329136}
+  _LifeTime: 0
+  MaxTimerBuff: 0
+  ships: []
+  FullLife: {fileID: 0}
+  VoidLife: {fileID: 0}
+  MinGetLife: 750
+  Shield: 0
+  TripleShoot: 0
+  NormalShoot: 0
+  MultipleShoot: 0
+  DoblePoints: 0
+  shootRate: 0.5
+  cameraShake: {fileID: 0}
+  _shakeDuration: 0
+  _shakeMagnitude: 0
 --- !u!1001 &8801778351591912523
 PrefabInstance:
   m_ObjectHideFlags: 0

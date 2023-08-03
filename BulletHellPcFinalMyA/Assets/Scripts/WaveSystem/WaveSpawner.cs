@@ -27,6 +27,7 @@ public class WaveSpawner : MonoBehaviour
     private int shipboss = 0;
     [SerializeField] Vector3 _spawnZone;
     public Transform boss;//los tipos de enemigos que se van a crear
+    public GameObject AllGame;//los tipos de enemigos que se van a crear
     private void Start()
     {
         WaveCountDown = TimerBetweenWaves;
@@ -35,16 +36,17 @@ public class WaveSpawner : MonoBehaviour
     {
         if(WaveCount<10 && shipboss==0)
         {
-                    if(state==SpawnStates.Waiting)
-        {
-            if(!EnemyisAlive())
+            if (state == SpawnStates.Waiting)
             {
-                OleadaCompletada();
-            }
-            else
-            {
-                Debug.Log("hay enemigos vivos");
-                return;
+                if (!EnemyisAlive())
+                {
+                    OleadaCompletada();
+                }
+                else
+                {
+                    Debug.Log("hay enemigos vivos");
+                    return;
+                }
             }
         }
         if(WaveCountDown<=0)
@@ -58,7 +60,7 @@ public class WaveSpawner : MonoBehaviour
         {
             WaveCountDown -= Time.deltaTime;
         }
-        }
+
 
         if(WaveCount>=10 && shipboss==0)
         {
@@ -115,11 +117,15 @@ public class WaveSpawner : MonoBehaviour
         int numenemyProbability = Random.Range(0, 101);
         if(numenemyProbability>=0 && numenemyProbability<=75)
         {
-            Instantiate(_enemy[0], _spawnZone, transform.rotation);
+            //Instantiate(_enemy[0], _spawnZone, transform.rotation);
+            Transform hijoInstanciado = Instantiate(_enemy[0], _spawnZone, transform.rotation);
+            hijoInstanciado.SetParent(AllGame.transform);
         }
         else if(numenemyProbability > 75 && numenemyProbability <= 101)
         {
-            Instantiate(_enemy[1], _spawnZone, transform.rotation);
+            //Instantiate(_enemy[1], _spawnZone, transform.rotation);
+            Transform hijoInstanciado = Instantiate(_enemy[1], _spawnZone, transform.rotation);
+            hijoInstanciado.SetParent(AllGame.transform);
         }
     }
     public void SpawnBoss(Transform _Boss)

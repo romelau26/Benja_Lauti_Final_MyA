@@ -44,5 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0374c937b2ebdf49aa4d9ea28d4872a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  XLine: 168.4
-  ZLine: 92.5
+  XLine: 131
+  XLineEnemy: 131
+  ZLine: 80.14
+  ZLineEnemy: 95

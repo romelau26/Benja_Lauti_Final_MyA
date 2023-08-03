@@ -5,7 +5,7 @@ using UnityEngine;
 public class SinShip : BasicStats
 {
     [SerializeField] float RangeSin;
-
+    [SerializeField] int damageForCollision;
     [Header("PARTICULAS")]
     [SerializeField] GameObject _particlePrefab;
 
@@ -33,14 +33,15 @@ public class SinShip : BasicStats
             StartCoroutine(cameraShake.Shake(_shakeDuration, _shakeMagnitude));
             gameObject.SetActive(false);
             ParticleFxBuilder();
-            Player player = FindObjectOfType<Player>();
+            //Player player = FindObjectOfType<Player>();
+            View player = FindObjectOfType<View>();
             var ValuePoints = Random.Range(50, 101);
             player.AddPoints(ValuePoints);
         }
     }
     public void LimitsFronts()
     {
-        transform.position = GameManager.Instance.transportPosition(transform.position);
+        transform.position = GameManager.Instance.transportPositionEnemy(transform.position);
     }
     public void ParticleFxBuilder()
     {

@@ -5,7 +5,8 @@ using UnityEngine;
 public class ShootArea : BasicStats
 {
     public Transform[] Spawns;
-    [SerializeField] Player pl;
+    //[SerializeField] Player pl;
+    [SerializeField] View _pl;
     float ShootRateTime = 0;
     public float shootRate = 0.5f;
     public GameObject ExplotionCam;
@@ -29,15 +30,17 @@ public class ShootArea : BasicStats
         {
             gameObject.SetActive(false);
             Instantiate(ExplotionCam, transform.position, transform.rotation);
-            if (pl.DoblePoints == true)
+            if (_pl.DoblePoints == true)
             {
                 var ValueMoney = Random.Range(MinScore, MaxScore);
-                Player.ScoreAmount += ValueMoney * 2;
+                //Player.ScoreAmount += ValueMoney * 2;
+                View.ScoreAmount += ValueMoney * 2;
             }
             else
             {
                 var ValueMoney = Random.Range(MinScore, MaxScore);
-                Player.ScoreAmount += ValueMoney;
+                //Player.ScoreAmount += ValueMoney;
+                View.ScoreAmount += ValueMoney;
             }
         }
 

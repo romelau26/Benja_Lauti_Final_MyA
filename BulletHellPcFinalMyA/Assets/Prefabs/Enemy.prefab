@@ -52,6 +52,7 @@ MonoBehaviour:
   MaxHealth: 5
   CurrentHealth: 0
   RangeSin: 0
+  damageForCollision: 1
   _particlePrefab: {fileID: 6514950685857210212, guid: 221200167dae5b64e9342d141d1a3f28, type: 3}
   cameraShake: {fileID: 0}
   _shakeDuration: 0.2
@@ -80,10 +81,10 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7201789675790333943}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.12, y: 3.58, z: 6.71}
+  m_Size: {x: 3.03, y: 4.06, z: 8.12}
   m_Center: {x: 0, y: 0, z: -0.9}
 --- !u!1 &7201789676059016350
 GameObject:
@@ -250,3 +251,39 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 537741eada6c8a042bee9cd86949e6d2, type: 3}
   m_PrefabInstance: {fileID: 7201789675569206296}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8012058065927792969 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 537741eada6c8a042bee9cd86949e6d2, type: 3}
+  m_PrefabInstance: {fileID: 7201789675569206296}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &8589235593014058441
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8012058065927792969}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.32, y: 0.74, z: 0.35}
+  m_Center: {x: 0.0000000037252903, y: -0.000009074809, z: -0.000013779852}
+--- !u!114 &8461876604062766529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8012058065927792969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4458e4e0500c444fa5167b91bfe66f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 1
+  speed: 0
+  MaxLifetime: 0
+  _currentLifeTime: 0
+  _particlePrefab: {fileID: 6514950685857210212, guid: 221200167dae5b64e9342d141d1a3f28, type: 3}
+  objeto: {fileID: 7201789675790333943}
